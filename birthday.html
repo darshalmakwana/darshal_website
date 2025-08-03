@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday My Love</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('hyy_hyy.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      overflow-x: hidden;
+      text-align: center;
+    }
+
+    .container {
+      margin: 80px auto;
+      padding: 40px;
+      background: rgba(63, 0, 84, 0.85);
+      border-radius: 50px 100px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 0 50px #a700ff88;
+    }
+
+    .photos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .photos img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50% 50% 30% 50% / 50% 50% 50% 40%;
+      border: 2px solid white;
+      box-shadow: 0 0 20px hotpink;
+      background-color: white;
+    }
+
+    h1 {
+      color: #ff3cac;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1em;
+      padding: 0 10px;
+      line-height: 1.6;
+    }
+
+    .button, .music-btn {
+      margin-top: 30px;
+    }
+
+    .button button, .music-btn button {
+      padding: 14px 36px;
+      font-size: 1em;
+      background: white;
+      color: #ff00cc;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 0 20px #ff00cc;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    .button button:hover, .music-btn button:hover {
+      background: #ffe6f6;
+      box-shadow: 0 0 30px #ff00dd;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Music -->
+  <audio autoplay loop muted id="bg-music">
+    <source src="birthday_song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Content Container -->
+  <div class="container">
+    <div class="photos">
+      <img src="yu_5.jpg" alt="Photo 1">
+      <img src="yu_2.jpg" alt="Photo 2">
+      <img src="yu_3.jpg" alt="Photo 3">
+    </div>
+
+    <h1>Happy Birthday My Love 😘</h1>
+
+    <p>
+      Wish you a very happy birthday my everything. <br>
+      Tara a birthday ne best banavva mate hu mara thi bane aatlu badhu try kris tu tara ava khas divs ma khus re 
+      ane tne jotu hoy a badhu j mle tne a birthday ma sorry tne toh khbr chene mne english ma lakhvu n fave toh 
+      gujrati ma chalve leje once more happy Birthday to you my love 😘
+    </p>
+
+    <!-- 🎁 Show Surprise Button -->
+    <div class="button">
+      <button onclick="window.location.href='task2.html'">🎁 Show Surprise</button>
+    </div>
+
+    <!-- 🔊 Play/Pause Music Button -->
+    <div class="music-btn">
+      <button onclick="toggleMusic()" id="music-btn">🔊 Play Music</button>
+    </div>
+  </div>
+
+  <!-- Script for toggling music -->
+  <script>
+    const music = document.getElementById("bg-music");
+    const musicBtn = document.getElementById("music-btn");
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (isPlaying) {
+        music.pause();
+        musicBtn.textContent = "🔊 Play Music";
+      } else {
+        music.muted = false;
+        music.play().catch(err => console.log(err));
+        musicBtn.textContent = "🔇 Pause Music";
+      }
+      isPlaying = !isPlaying;
+    }
+  </script>
+
+</body>
+</html>
