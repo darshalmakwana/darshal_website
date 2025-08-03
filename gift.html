@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Surprise Gift</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      background: url('yuuti.png') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 60px;
+      color: #333;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .message-box {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 25px 30px;
+      border-radius: 16px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+      max-width: 90%;
+      width: 300px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .message-box:hover {
+      transform: scale(1.03);
+    }
+
+    h1 {
+      color: #ff4b2b;
+      margin-bottom: 15px;
+      font-size: 1.4em;
+      text-shadow: 1px 1px 2px white;
+    }
+
+    p {
+      font-size: 1em;
+      font-weight: bold;
+      color: #000;
+      margin: 0;
+    }
+
+    .teddy {
+      width: 150px;
+      border-radius: 20px;
+      opacity: 0;
+      transition: opacity 0.8s ease, transform 0.5s ease;
+      transform: scale(0.8);
+    }
+
+    .teddy.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @media (max-width: 600px) {
+      .teddy {
+        width: 100px;
+      }
+
+      .message-box {
+        width: 250px;
+        padding: 20px;
+      }
+
+      .container {
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Left Teddy -->
+    <img src="teddy_1.jpg" alt="Teddy Left" class="teddy" id="teddyLeft">
+
+    <!-- Message Box -->
+    <div class="message-box" onclick="revealTeddies()">
+      <h1>Your Surprise Gift 🎁</h1>
+      <p>Click here to reveal your cute teddies! 
+        this is your first gift and next gifts will coming soon  💖
+      </p>
+    </div>
+
+    <!-- Right Teddy -->
+    <img src="teddy_1.jpg" alt="Teddy Right" class="teddy" id="teddyRight">
+  </div>
+
+  <script>
+    function revealTeddies() {
+      document.getElementById("teddyLeft").classList.add("show");
+      document.getElementById("teddyRight").classList.add("show");
+    }
+  </script>
+
+</body>
+</html>
